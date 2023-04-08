@@ -44,19 +44,19 @@ public class thrd_view extends JFrame {
         forth_dpth_frst.searchPath(mz, sr, sc, path);
         pi = path.size() - 2;
 
-//        new Timer().schedule(new TimerTask() { //for auto run
-//            @Override
-//            public void run() {
-//                update();
-//                repaint();
-//            }
-//        }, 100, 500);
-//   }//This is new function
-//    public void update() {
-//        if (pi < 0) {
-//            pi = 0;
-//        }
-//    }
+        // new Timer().schedule(new TimerTask() { //for auto run
+        // @Override
+        // public void run() {
+        // update();
+        // repaint();
+        // }
+        // }, 100, 500);
+        // }//This is new function
+        // public void update() {
+        // if (pi < 0) {
+        // pi = 0;
+        // }
+        // }
     }
 
     @Override
@@ -66,18 +66,19 @@ public class thrd_view extends JFrame {
         for (int i = 0; i < r; i++) {
             for (int j = 0; j < c; j++) {
                 Color color;
-                color = switch (mz[i][j]) {
-                    case 1 ->
-                        Color.BLACK;
-                    case 6 ->
-                        Color.GREEN;
-                    case 9 ->
-                        Color.RED;
-                    case 8 ->
-                        Color.PINK;
-                    default ->
-                        Color.WHITE;
-                }; // draw the maze
+                switch (mz[i][j]) {
+                    case 1:
+                        color = Color.BLACK;
+                    case 6:
+                        color = Color.GREEN;
+                    case 9:
+                        color = Color.RED;
+                    case 8:
+                        color = Color.PINK;
+                    default:
+                        color = Color.WHITE;
+                }
+                ; // draw the maze
                 g.setColor(color);
                 g.fillRect(40 * j, 40 * i, 40, 40);
                 g.setColor(Color.DARK_GRAY);
